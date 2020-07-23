@@ -1,7 +1,9 @@
 <?php
   function connection(){
     try {
-      $a = "mysql:host=localhost; db_name=frsiv_26319363_mc3travel"
+      $a = "mysql:host=localhost; dbname=frsiv_26319363_mc3travel";
+      $key = new PDO($a,"root","");
+      return $key;
     } catch (PDOExcption $e){
 
     }

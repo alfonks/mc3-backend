@@ -13,15 +13,15 @@
     </style>
   </head>
   <body>
-    <form class="input restaurant data" action="input_data_process.php" method="post">
+    <form action="input_data_process.php" method="post"  enctype="multipart/form-data">
       <div class="form-group">
-        <label for="Restaurantname">Nama Restoran</label>
-        <input type="text" class="form-control" id="nama_restoran" placeholder="Nama Restoran">
+        <label>Nama Restoran</label>
+        <input type="text" class="form-control" id="nama_restoran" name="nama_restoran" placeholder="Nama Restoran"></input>
       </div>
 
       <div class="form-group">
         <label for="alamat">Alamat</label>
-        <textarea type="text" class="form-control" id="alamat_restoran" placeholder="Alamat Restoran" rows="5"></textarea>
+        <textarea type="text" class="form-control" name="alamat_restoran" placeholder="Alamat Restoran" rows="5"></textarea>
       </div>
 
       <div class = "form-row align-items-center">
@@ -29,10 +29,10 @@
           <label for="koordinat">Koordinat Peta</label>
         </div>
         <div class="col-auto">
-          <input type="text" class="form-control" id="latitude" value="-6.8272197" readonly>
+          <input type="text" class="form-control" name="latitude" value="-6.8272197" readonly>
         </div>
         <div class="col-auto">
-          <input type="text" class="form-control" id="longitude" value="107.5265488" readonly>
+          <input type="text" class="form-control" name="longitude" value="107.5265488" readonly>
         </div>
 
       </div>
@@ -40,19 +40,19 @@
       <br>
 
       <div class="form-group">
-        <label for="telefon">Telefon Restoran</label>
-        <input type="text" class="form-control" id="telefon_restoran" placeholder="telefon restoran (optional)"></input>
+        <label for="telefon">Telefon Restoran (Optional)</label>
+        <input type="text" class="form-control" name="telefon_restoran" placeholder="telefon restoran (optional)"></input>
       </div>
       <br>
 
       <div class="form-row align-items-center">
         <div class="col-auto">
           <label for="openhour">Open Hour</label>
-          <input type="text" class="form-control" id="jam_buka" placeholder="jam buka"></input>
+          <input type="text" class="form-control" name="jam_buka" placeholder="jam buka"></input>
         </div>
         <div class="col-auto">
           <label for="closehour">Close Hour</label>
-          <input type="text" class="form-control" id="jam_tutup" placeholder="jam tutup"></input>
+          <input type="text" class="form-control" name="jam_tutup" placeholder="jam tutup"></input>
         </div>
 
       </div>
@@ -61,7 +61,7 @@
       <div class="form-group">
         <label for="closeday">Hari Tidak Jualan</label>
         <br>
-        <select id="hari_tutup" name="days">
+        <select name="hari_tutup">
           <option value="allday">Open All Day</option>
           <option value="Senin">Senin</option>
           <option value="Selasa">Selasa</option>
@@ -76,29 +76,35 @@
       <div class="form-row align-items-center">
         <div class="col-auto">
           <label for="lowprice">Lowest Price</label>
-          <input type="text" class="form-control" id="harga_murah" placeholder="Lowest Price"></input>
+          <input type="text" class="form-control" name="harga_murah" placeholder="Lowest Price"></input>
         </div>
         <div class="col-auto">
           <label for="highpricer">Highest Price</label>
-          <input type="text" class="form-control" id="harga_mahal" placeholder="Highest Price"></input>
+          <input type="text" class="form-control" name="harga_mahal" placeholder="Highest Price"></input>
         </div>
       </div>
       <br>
 
       <div class="form-group">
         <label for="grouprice">Group Price(Range 1 - 5)</label>
-        <input type="text" class="form-control" id="group_price" placeholder="Group Price(Range 1 - 5)">
+        <select name="price_range">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
       <br>
 
       <div class="form-group">
         <label>Deskripsi (Optional)</label>
-        <textarea type="text" class="form-control" id="deskripsi" placeholder="Deskripsi (Optional)" rows="5"></textarea>
+        <textarea type="text" class="form-control" name="deskripsi" placeholder="Deskripsi (Optional)" rows="5"></textarea>
       </div>
 
       <div class="form-group">
         <label>History (Optional)</label>
-        <textarea type="text" class="form-control" id="history" placeholder="History (Optional)" rows="5"></textarea>
+        <textarea type="text" class="form-control" name="history" placeholder="History (Optional)" rows="5"></textarea>
       </div>
 
       <div class="form-group">
@@ -108,8 +114,13 @@
       <br>
 
       <div class="form-group">
-        <label>Upload your image here</label><br>
-        <input type="file" name="files[]" multiple>
+        <label>Upload your main image</label><br>
+        <input type="file" name="fotoMain" id="main_display">
+      </div>
+
+      <div class="form-group">
+        <label>Upload your display gallery (Optional)</label><br>
+        <input type="file" name="files[]" id="gallery_display" multiple>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
