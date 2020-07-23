@@ -105,6 +105,12 @@
         <label>Fun Fact (Optional)</label>
         <textarea type="text" class="form-control" id="fun_fact" placeholder="Fun Fact (Optional)" rows="5"></textarea>
       </div>
+      <br>
+
+      <div class="form-group">
+        <label>Upload your image here</label><br>
+        <input type="file" name="files[]" multiple>
+      </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
