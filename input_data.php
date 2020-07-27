@@ -29,12 +29,14 @@
           <label for="koordinat">Koordinat Peta</label>
         </div>
         <div class="col-auto">
-          <input type="text" class="form-control" name="latitude" value="-6.8272197" readonly>
+          <input type="text" id="lat" class="form-control" name="latitude" value="-6.8272197" onchange="checkLocation()">
         </div>
         <div class="col-auto">
-          <input type="text" class="form-control" name="longitude" value="107.5265488" readonly>
+          <input type="text" id="long" class="form-control" name="longitude" value="107.5265488" onchange="checkLocation()">
         </div>
+        <div class="col-auto">
 
+        </div>
       </div>
       <div id="mapCanvas"></div>
       <br>
@@ -45,14 +47,25 @@
       </div>
       <br>
 
+      <div class="form-group">
+        <label>Kategori Restoran</label>
+        <select name="kategori">
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="indonesian">Indonesian</option>
+          <option value="asian">Asian</option>
+          <option value="western">Western</option>
+        </select>
+      </div>
       <div class="form-row align-items-center">
         <div class="col-auto">
           <label for="openhour">Open Hour</label>
-          <input type="text" class="form-control" name="jam_buka" placeholder="jam buka"></input>
+          <input type="text" class="form-control" name="jam_buka" placeholder="jam buka (09:00)"></input>
         </div>
         <div class="col-auto">
           <label for="closehour">Close Hour</label>
-          <input type="text" class="form-control" name="jam_tutup" placeholder="jam tutup"></input>
+          <input type="text" class="form-control" name="jam_tutup" placeholder="jam tutup (23:00)"></input>
         </div>
 
       </div>
@@ -75,11 +88,11 @@
 
       <div class="form-row align-items-center">
         <div class="col-auto">
-          <label for="lowprice">Lowest Price</label>
+          <label for="lowprice">Lowest Price (Contoh: 15000)</label>
           <input type="text" class="form-control" name="harga_murah" placeholder="Lowest Price"></input>
         </div>
         <div class="col-auto">
-          <label for="highpricer">Highest Price</label>
+          <label for="highpricer">Highest Price (Contoh: 250000)</label>
           <input type="text" class="form-control" name="harga_mahal" placeholder="Highest Price"></input>
         </div>
       </div>
@@ -128,6 +141,13 @@
 
     <script>
       var position = [-6.8272197, 107.5265488];
+
+      function checkLocation(){
+        position[0] = document.getElementById("lat").value;
+        position[1] = document.getElementById("long").value;
+        initialize();
+      }
+
 
       function initialize() {
           var latlng = new google.maps.LatLng(position[0], position[1]);
@@ -181,8 +201,8 @@
       }
 
       function addToForm() {
-        document.getElementById("latitude").value = position[0];
-        document.getElementById("longitude").value = position[1];
+        document.getElementById("lat").value = position[0];
+        document.getElementById("long").value = position[1];
       }
     </script>
   </body>

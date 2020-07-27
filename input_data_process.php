@@ -10,13 +10,14 @@
 
   $sql = "INSERT INTO restaurant (restaurant_name, address, latitude, longitude, phone,
     open_hour, close_hour, open_day, lowest_price, highest_price, group_price, description,
-    history, fun_facts, photo_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    history, fun_facts, photo_path, category) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
   $nama_restoran = $_POST['nama_restoran'];
   $alamat = $_POST['alamat_restoran'];
   $lat = $_POST['latitude'];
   $long = $_POST['longitude'];
   $phone = (isset($_POST['telefon_restoran'])) ? $_POST['telefon_restoran'] : "-";
+  $kategori = $_POST['kategori'];
   $open = $_POST['jam_buka'];
   $close = $_POST['jam_tutup'];
   $openday = $_POST['hari_tutup'];
@@ -38,7 +39,7 @@
   move_uploaded_file($mainphoto,$photo_path);
   $concatData = [$nama_restoran, $alamat, $lat, $long, $phone, $open,
     $close, $openday, $lowest, $highest, $range, $desc, $history, $funfact,
-    $photo_path];
+    $photo_path, $kategori];
 
   $res = $key->prepare($sql);
   $res->execute($concatData);
@@ -68,7 +69,7 @@
       }
     }
   }
-
+  header('refresh:2;index.php');
  ?>
 
 
@@ -76,7 +77,7 @@
  function sweetclick(){
    swal({
      icon: "success",
-     title: "Success Insert to Database",
+     title: "Berhasil menambahkan data restoran",
    });
  }
  window.onload = sweetclick;

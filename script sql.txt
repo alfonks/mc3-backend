@@ -5,6 +5,7 @@ create table restaurant(
     latitude double,
     longitude double,
     phone varchar(15),
+		category varchar(15),
     open_hour varchar(5),
     close_hour varchar(5),
     open_day varchar(80),
