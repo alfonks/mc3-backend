@@ -37,6 +37,7 @@
       }
 
       $obj->price_group = str_repeat("$",$row['group_price']);
+      $obj->price = "Rp. " . $row['lowest_price'] . " - Rp. " . $row['highest_price'];
       $obj->address = $row['address'];
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
@@ -82,7 +83,7 @@
     $galery = [];
     $row = $res->fetch();
     if(isset($row['restaurant_id'])) {
-        
+
         $obj->id_resto = $row['restaurant_id'];
         $obj->category = $row['category'];
         $obj->resto_name = $row['restaurant_name'];
@@ -107,6 +108,7 @@
         }
 
         $obj->price_group = str_repeat("$",$row['group_price']);
+        $obj->price = "Rp. " . $row['lowest_price'] . " - Rp. " . $row['highest_price'];
         $obj->address = $row['address'];
         $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
         $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
@@ -140,10 +142,10 @@
 
         echo json_encode(['result' => $obj]);
     } else {
-        
+
         echo json_encode(['result' => $array_data]);
     }
-    
+
 
   } elseif(isset($_GET['rand'])) {
     // $param = $_GET['rand'];
@@ -179,6 +181,7 @@
       }
 
       $obj->price_group = str_repeat("$",$row['group_price']);
+      $obj->price = "Rp. " . $row['lowest_price'] . " - Rp. " . $row['highest_price'];
       $obj->address = $row['address'];
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
@@ -231,7 +234,7 @@
       $obj->jam_tutup = (isset($row['close_hour'])) ? $row['close_hour'] : "-";
 
       //Days open
-      
+
       if($row['open_day'] == "allday") {
         $obj->schedule = $days;
       } else {
@@ -246,9 +249,10 @@
         $obj->schedule = $final_day;
       }
 
-      
+
 
       $obj->price_group = str_repeat("$",$row['group_price']);
+      $obj->price = "Rp. " . $row['lowest_price'] . " - Rp. " . $row['highest_price'];
       $obj->address = $row['address'];
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
@@ -285,6 +289,6 @@
     echo json_encode(['result' => $array_data]);
   }
 
-  
+
 
  ?>

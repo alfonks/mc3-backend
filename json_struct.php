@@ -8,6 +8,7 @@
     public $jam_buka;
     public $jam_tutup;
     public $schedule;
+    public $price;
     public $price_group;
     public $address;
     public $contact;
@@ -20,6 +21,7 @@
   }
 
   class review_struct {
+    public $name;
     public $rating;
     public $review;
   }
