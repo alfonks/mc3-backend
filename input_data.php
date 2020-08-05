@@ -122,7 +122,7 @@
 
       <div class="form-group">
         <label>Fun Fact (Optional)</label>
-        <textarea type="text" class="form-control" id="fun_fact" placeholder="Fun Fact (Optional)" rows="5"></textarea>
+        <textarea type="text" class="form-control" name="fun_fact" placeholder="Fun Fact (Optional)" rows="5"></textarea>
       </div>
       <br>
 
