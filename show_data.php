@@ -42,7 +42,7 @@
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
       $obj->history = (isset($row['history'])) ? $row['history'] : "-";
-      $obj->fun_fact = (isset($row['fun_fact'])) ? $row['fun_fact'] : "-";
+      $obj->fun_fact = (isset($row['fun_facts'])) ? $row['fun_facts'] : "-";
 
 
       $newkey = connection();
@@ -113,7 +113,7 @@
         $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
         $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
         $obj->history = (isset($row['history'])) ? $row['history'] : "-";
-        $obj->fun_fact = (isset($row['fun_fact'])) ? $row['fun_fact'] : "-";
+        $obj->fun_fact = (isset($row['fun_facts'])) ? $row['fun_facts'] : "-";
 
 
         $newkey = connection();
@@ -186,7 +186,7 @@
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
       $obj->history = (isset($row['history'])) ? $row['history'] : "-";
-      $obj->fun_fact = (isset($row['fun_fact'])) ? $row['fun_fact'] : "-";
+      $obj->fun_fact = (isset($row['fun_facts'])) ? $row['fun_facts'] : "-";
 
 
       $newkey = connection();
@@ -263,7 +263,7 @@
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
       $obj->history = (isset($row['history'])) ? $row['history'] : "-";
-      $obj->fun_fact = (isset($row['fun_fact'])) ? $row['fun_fact'] : "-";
+      $obj->fun_fact = (isset($row['fun_facts'])) ? $row['fun_facts'] : "-";
 
 
       $newkey = connection();
@@ -335,7 +335,7 @@
       $obj->contact = (isset($row['phone'])) ? $row['phone'] : "-";
       $obj->overview = (isset($row['description'])) ? $row['description'] : "-";
       $obj->history = (isset($row['history'])) ? $row['history'] : "-";
-      $obj->fun_fact = (isset($row['fun_fact'])) ? $row['fun_fact'] : "-";
+      $obj->fun_fact = (isset($row['fun_facts'])) ? $row['fun_facts'] : "-";
 
 
       $newkey = connection();
