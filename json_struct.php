@@ -8,6 +8,7 @@
     public $jam_buka;
     public $jam_tutup;
     public $schedule;
+    public $jadwal;
     public $price;
     public $price_group;
     public $address;

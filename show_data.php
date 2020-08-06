@@ -1,6 +1,7 @@
 <?php
   require "key_path.php";
   require "json_struct.php";
+
   $key = connection();
   $array_data = [];
   if(isset($_GET['category'])) {
@@ -24,10 +25,12 @@
       //Days open
       if($row['open_day'] == "allday") {
         $obj->schedule = $days;
+        $obj->jadwal = "Buka setiap hari Senin - Minggu";
       } else {
         $final_day = [];
         foreach($days as $day) {
           if($row['open_day'] == $day) {
+            $obj->jadwal = "Buka setiap hari, hari " . $row['open_day'] . " libur";
             continue;
           } else {
             array_push($final_day, $day);
@@ -94,17 +97,19 @@
 
         //Days open
         if($row['open_day'] == "allday") {
-            $obj->schedule = $days;
+          $obj->schedule = $days;
+          $obj->jadwal = "Buka setiap hari Senin - Minggu";
         } else {
-            $final_day = [];
-            foreach($days as $day) {
+          $final_day = [];
+          foreach($days as $day) {
             if($row['open_day'] == $day) {
-                continue;
+              $obj->jadwal = "Buka setiap hari, hari " . $row['open_day'] . " libur";
+              continue;
             } else {
-                array_push($final_day, $day);
+              array_push($final_day, $day);
             }
-            }
-            $obj->schedule = $final_day;
+          }
+          $obj->schedule = $final_day;
         }
 
         $obj->price_group = str_repeat("$",$row['group_price']);
@@ -168,10 +173,12 @@
       //Days open
       if($row['open_day'] == "allday") {
         $obj->schedule = $days;
+        $obj->jadwal = "Buka setiap hari Senin - Minggu";
       } else {
         $final_day = [];
         foreach($days as $day) {
           if($row['open_day'] == $day) {
+            $obj->jadwal = "Buka setiap hari, hari " . $row['open_day'] . " libur";
             continue;
           } else {
             array_push($final_day, $day);
@@ -243,10 +250,12 @@
 
       if($row['open_day'] == "allday") {
         $obj->schedule = $days;
+        $obj->jadwal = "Buka setiap hari Senin - Minggu";
       } else {
         $final_day = [];
         foreach($days as $day) {
           if($row['open_day'] == $day) {
+            $obj->jadwal = "Buka setiap hari, hari " . $row['open_day'] . " libur";
             continue;
           } else {
             array_push($final_day, $day);
@@ -315,10 +324,12 @@
 
       if($row['open_day'] == "allday") {
         $obj->schedule = $days;
+        $obj->jadwal = "Buka setiap hari Senin - Minggu";
       } else {
         $final_day = [];
         foreach($days as $day) {
           if($row['open_day'] == $day) {
+            $obj->jadwal = "Buka setiap hari, hari " . $row['open_day'] . " libur";
             continue;
           } else {
             array_push($final_day, $day);
