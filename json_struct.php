@@ -18,7 +18,9 @@
     public $fun_fact;
     public $rating;
     public $image;
+    public $tn_image;
     public $galery_images;
+    public $tn_galery_images;
   }
 
   class review_struct {
