@@ -58,7 +58,8 @@
       }
 
       $obj->rating = number_format($total / 10, 1);
-      $obj->image = "http://travelfunmc3.freesite.vip/".$row['photo_path'];
+      $temp_photo = str_replace("photo/", "",$row['photo_path']);
+      $obj->image = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_photo;
 
       $otherkey = connection();
       $galery_sql = "SELECT * FROM photo WHERE restaurant_id = ?";
@@ -66,7 +67,8 @@
       $res_galery->execute([$row['restaurant_id']]);
 
       while($galery_row = $res_galery->fetch()) {
-        $path = "http://travelfunmc3.freesite.vip/".$galery_row['photo_path'];
+        $temp_galery_path = str_replace("photo/", "", $galery_row['photo_path']);
+        $path = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_galery_path;
         array_push($galery, $path);
       }
 
@@ -131,7 +133,8 @@
         }
 
         $obj->rating = number_format($total / 10, 1);
-        $obj->image = "http://travelfunmc3.freesite.vip/".$row['photo_path'];
+        $temp_photo = str_replace("photo/", "",$row['photo_path']);
+        $obj->image = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_photo;
 
         $otherkey = connection();
         $galery_sql = "SELECT * FROM photo WHERE restaurant_id = ?";
@@ -139,8 +142,9 @@
         $res_galery->execute([$row['restaurant_id']]);
 
         while($galery_row = $res_galery->fetch()) {
-        $path = "http://travelfunmc3.freesite.vip/".$galery_row['photo_path'];
-        array_push($galery, $path);
+          $temp_galery_path = str_replace("photo/", "", $galery_row['photo_path']);
+          $path = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_galery_path;
+          array_push($galery, $path);
         }
 
         $obj->galery_images =  $galery;
@@ -206,7 +210,8 @@
       }
 
       $obj->rating = number_format($total / 10, 1);
-      $obj->image = "http://travelfunmc3.freesite.vip/".$row['photo_path'];
+      $temp_photo = str_replace("photo/", "",$row['photo_path']);
+      $obj->image = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_photo;
 
       $otherkey = connection();
       $galery_sql = "SELECT * FROM photo WHERE restaurant_id = ?";
@@ -214,7 +219,8 @@
       $res_galery->execute([$row['restaurant_id']]);
 
       while($galery_row = $res_galery->fetch()) {
-        $path = "http://travelfunmc3.freesite.vip/".$galery_row['photo_path'];
+        $temp_galery_path = str_replace("photo/", "", $galery_row['photo_path']);
+        $path = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_galery_path;
         array_push($galery, $path);
       }
 
@@ -285,7 +291,8 @@
       }
 
       $obj->rating = number_format($total / 10, 1);
-      $obj->image = "http://travelfunmc3.freesite.vip/".$row['photo_path'];
+      $temp_photo = str_replace("photo/", "",$row['photo_path']);
+      $obj->image = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_photo;
 
       $otherkey = connection();
       $galery_sql = "SELECT * FROM photo WHERE restaurant_id = ?";
@@ -293,7 +300,8 @@
       $res_galery->execute([$row['restaurant_id']]);
 
       while($galery_row = $res_galery->fetch()) {
-        $path = "http://travelfunmc3.freesite.vip/".$galery_row['photo_path'];
+        $temp_galery_path = str_replace("photo/", "", $galery_row['photo_path']);
+        $path = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_galery_path;
         array_push($galery, $path);
       }
 
@@ -359,7 +367,8 @@
       }
 
       $obj->rating = number_format($total / 10, 1);
-      $obj->image = "http://travelfunmc3.freesite.vip/".$row['photo_path'];
+      $temp_photo = str_replace("photo/", "",$row['photo_path']);
+      $obj->image = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_photo;
 
       $otherkey = connection();
       $galery_sql = "SELECT * FROM photo WHERE restaurant_id = ?";
@@ -367,7 +376,8 @@
       $res_galery->execute([$row['restaurant_id']]);
 
       while($galery_row = $res_galery->fetch()) {
-        $path = "http://travelfunmc3.freesite.vip/".$galery_row['photo_path'];
+        $temp_galery_path = str_replace("photo/", "", $galery_row['photo_path']);
+        $path = "http://travelfunmc3.freesite.vip/photo/tn_".$temp_galery_path;
         array_push($galery, $path);
       }
 
